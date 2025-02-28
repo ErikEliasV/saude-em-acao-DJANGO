@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde em Ação</title>
+
+    <link rel="shortcut icon" href="{% static 'images/logo-footer.png' %}" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Questrial&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles/style.css' %}">
+</head>
+<body>
+
+    {% include 'saude_em_acao/header.html' %}
+
+    <div>
+        <img width="100%" height="100%" class="img-topo" src="{% static 'images/foto-da-tela-principal.png' %}" alt="foto da tela principal">
+        
+        <h2>Objetivo do site</h2>
+        <div class="texto_de_explicacao">
+            <h3 class="aqui_queremos">Aqui, queremos ajudar você a melhorar sua saúde e qualidade de vida...</h3>
+            <img width="150px" height="150px" src="{% static 'images/imagem de fruta.png' %}" alt="imagem de frutas da tela principal">
+        </div>
+
+        <h2>Motivos para começar agora</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static 'images/imagem do boneco correndo.png' %}" alt="Imagem 1"></div>
+                <div class="swiper-slide"><img src="{% static 'images/imagem do boneco empurrando ferro.png' %}" alt="Imagem 2"></div>
+                <div class="swiper-slide"><img src="{% static 'images/imagem do boneco fazendo barra.png' %}" alt="Imagem 3"></div>
+                <div class="swiper-slide"><img src="{% static 'images/imagem do boneco fazendo elevação lateral.png' %}" alt="Imagem 4"></div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'saude_em_acao/footer.html' %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/scripts/slide.js' %}"></script>
+
+</body>
+</html>
