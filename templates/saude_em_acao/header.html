@@ -26,8 +26,12 @@
             </div>  
             <div class="ajeitar">
                 <input placeholder="Pesquisar" type="text" class="input-pesquisar">
-                <a href="{% url 'tela_login' %}">
-                    <img width="40px" height="40px" src="{% static 'images/foto-perfil-joao.png' %}" alt="Perfil">
+                <a href="{% if request.user.is_authenticated %}{% url 'perfil' %}{% else %}{% url 'usuario:tela_login' %}{% endif %}">
+                    {% if request.user.is_authenticated %}
+                        <img width="40px" height="40px" src="{% static 'images/foto-perfil-joao.png' %}" alt="Perfil">
+                    {% else %}
+                        <span><h1>Login/<br>Cadastrar</h1></span>
+                    {% endif %}
                 </a>
             </div>
         </header>
@@ -35,7 +39,11 @@
         <nav class="menu" id="menu">
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'perfil' %}">Perfil</a></li>
+                <li>
+                    <a href="{% if request.user.is_authenticated %}{% url 'perfil' %}{% else %}{% url 'usuario:tela_login' %}{% endif %}">
+                        {% if request.user.is_authenticated %}Perfil{% else %}Login/<br>Cadastrar{% endif %}
+                    </a>
+                </li>
                 <li><a href="{% url 'sobre_nos' %}">Sobre Nós</a></li>
                 <li id="exercicio-item">Exercícios
                     <ul class="submenu" id="submenu">

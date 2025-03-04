@@ -5,15 +5,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'saude_em_acao/index.html')
 
-def tela_login(request):
-    return render(request, 'saude_em_acao/tela-login.html')
-
-def tela_registro(request):
-    return render(request, 'saude_em_acao/tela-registro.html')
-
-def tela_pergunta(request):
-    return render(request, 'saude_em_acao/tela-pergunta.html')
-
 def perfil(request):
     return render(request, 'saude_em_acao/perfil.html')
 

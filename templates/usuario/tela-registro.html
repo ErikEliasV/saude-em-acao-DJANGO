@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Saude em Ação</title>
+    <link rel="shortcut icon" href="../static/images/logo-saude-em-acao-semtitulo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '../static/css/styles/style-login-registro.css' %}">
+</head>
+<body>
+    <div class="tela">
+        <img src="{% static '../static/images/logo-saude-em-acao-semtitulo.png' %}" alt="" width="90" height="87,84">
+        <h1>Faça seu Cadastro</h1>
+        <hr class="ajeitar-registro">
+        <form method="post" action="{% url 'usuario:registro' %}">
+            {% csrf_token %}
+            <div class="group">
+                <input autocomplete="off" required id="cpf" name="cpf" type="tel" class="input" maxlength="14" oninput="formatCPF(this)" onchange="formatCPF(this)">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>CPF</label>
+            </div>
+            <div class="group">
+                <input autocomplete="off" required type="email" name="email" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="group">
+                <input autocomplete="off" required type="password" name="password1" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Senha</label>
+            </div>
+            <div class="group">
+                <input autocomplete="off" required type="password" name="password2" class="input">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Repita a senha</label>
+            </div>
+            <div class="botao-cadastra">
+                <button type="submit">CADASTRAR</button>
+            </div>
+        </form>
+        <div class="botao-voltar">
+            <a href="{% url 'usuario:tela_login' %}">
+                <button>VOLTAR</button>
+            </a>
+        </div>
+    </div>
+    <script src="{% static '../static/js/scripts/cpf.js' %}"></script>
+</body>
+</html>

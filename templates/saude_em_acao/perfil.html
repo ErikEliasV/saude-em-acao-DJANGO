@@ -16,8 +16,10 @@
         <img src="{% static '../static/images/foto-perfil-joao.png' %}" alt="" width="90px" height="90px">
 
         <div class="cabecalho">
-            <h1>João Rocha</h1>
-            <a href=""><img src="{% static '../static/images/editar.png' %}" alt="" width="23px" height="23px"></a>
+            <h1>{{ request.user.nome }} {{ request.user.sobrenome }}</h1>
+            <a href="{% url 'usuario:logout' %}">
+                <img src="{% static '../static/images/sair.png' %}" alt="" width="23px" height="23px">
+            </a>
         </div> 
         <div class="nomedaativ">
             <h2>NIVEL DE ATIVIDADE <h2 class="prt">INICIANTE</h2></h2>

@@ -18,6 +18,8 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+LOGOUT_REDIRECT_URL = 'index'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuario',
 ]
 
 MIDDLEWARE = [
@@ -101,8 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTH_USER_MODEL = 'usuario.CustomUser'
 
-
+AUTHENTICATION_BACKENDS = [
+    'usuario.backends.CustomUserBackend',  # Backend personalizado
+    'django.contrib.auth.backends.ModelBackend',  # Backend padrão do Django
+]
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 

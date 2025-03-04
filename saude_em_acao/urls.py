@@ -1,11 +1,8 @@
 from django.urls import path
-from saude_em_acao.views import index, tela_login, perfil, sobre_nos, exercicio_perna, exercicio_braco, exercicio_gluteos, exercicio_abdomen, tela_registro, tela_pergunta
+from saude_em_acao.views import index, perfil, sobre_nos, exercicio_perna, exercicio_braco, exercicio_gluteos, exercicio_abdomen
 
 urlpatterns = [
     path('', index, name='index'),
-    path('login/', tela_login, name='tela_login'),
-    path('registro/', tela_registro, name='tela_registro'),
-    path('pergunta/', tela_pergunta, name='tela_pergunta'),
     path('perfil/', perfil, name='perfil'),
     path('sobre-nos/', sobre_nos, name='sobre_nos'),
     path('exercicios/perna/', exercicio_perna, name='exercicio_perna'),

@@ -14,15 +14,15 @@
 <body>
     <footer>
         <div class="organizar">
-            <img class="logo" src="{% static '../static/images/logo-footer.png' %}" alt="logo do saude em ação">
+            <img  class="logo" src="{% static '../static/images/logo-footer.png' %}" alt="logo do saude em ação">
             <a href="{% url 'index' %}">
                 <h1>Home</h1>
             </a>
             <a href="{% url 'exercicio_abdomen' %}">
                 <h1>Exercícios</h1>
             </a>
-            <a href="{% url 'perfil' %}">
-                <h1>Usuário</h1>
+            <a href="{% if request.user.is_authenticated %}{% url 'perfil' %}{% else %}{% url 'usuario:tela_login' %}{% endif %}">
+                <h1>{% if request.user.is_authenticated %}Perfil{% else %}Login/Cadastro{% endif %}</h1>
             </a>
             <div class="ajeitar-botao">
                 <a href="https://www.facebook.com"><img class="botao-footer" src="{% static '../static/images/facebook-footer.png' %}" alt="botão do facebook"></a> 
