@@ -78,9 +78,15 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'saude_em_acao',
+        'USER': 'erik',
+        'PASSWORD': 'e1e2e3e4',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
@@ -154,6 +160,3 @@ CACHES = {
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-if os.getenv('RENDER'):
-    from create_superuser import *
