@@ -1,45 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const meses = [
-        "JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO",
-        "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"
-    ];
-
-    const dataAtual = new Date();
-    const mesAtual = meses[dataAtual.getMonth()];
-    const anoAtual = dataAtual.getFullYear();
-
-    document.getElementById("mes-ano").innerHTML = `${mesAtual} <br> DE ${anoAtual}`;
-
-    function gerarDiasDaSemana() {
-        const container = document.querySelector(".listin");
-        container.innerHTML = "";
-        const hoje = new Date();
-        const diaSemanaAtual = hoje.getDay();
-        const diaAtual = hoje.getDate();
-
-        const ajuste = diaSemanaAtual === 0 ? -6 : 1 - diaSemanaAtual;
-
-        for (let i = 0; i < 7; i++) {
-            const dataCalculada = new Date(hoje);
-            dataCalculada.setDate(diaAtual + ajuste + i);
-
-            const elementoDia = `
+document.addEventListener("DOMContentLoaded",function(){let e=new Date,t=["JANEIRO","FEVEREIRO","MAR\xc7O","ABRIL","MAIO","JUNHO","JULHO","AGOSTO","SETEMBRO","OUTUBRO","NOVEMBRO","DEZEMBRO"][e.getMonth()],n=e.getFullYear();document.getElementById("mes-ano").innerHTML=`${t} <br> DE ${n}`,!function e(){let t=document.querySelector(".listin");t.innerHTML="";let n=new Date,l=n.getDay(),a=n.getDate(),i=0===l?-6:1-l;for(let c=0;c<7;c++){let s=new Date(n);s.setDate(a+i+c);let o=`
                 <div class="ajeitar-linha">
                     <div class="content">
                         <label class="checkBox">
                             <input class="checkbox" type="checkbox">
                             <div class="transition"></div>
                         </label>
-                        <h4>${dataCalculada.getDate()}</h4>
+                        <h4>${s.getDate()}</h4>
                     </div>
                 </div>
-            `;
-            container.innerHTML += elementoDia;
-        }
-        
-        const event = new Event("checkboxesGerados");
-        document.dispatchEvent(event);
-    }
-
-    gerarDiasDaSemana();
-});
+            `;t.innerHTML+=o}let O=new Event("checkboxesGerados");document.dispatchEvent(O)}()});
