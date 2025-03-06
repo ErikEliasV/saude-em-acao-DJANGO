@@ -8,17 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '../static/css/styles/style-perfil.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles/style-perfil.css' %}">
 </head>
 <body>
     {% include 'saude_em_acao/header.html' %}
     <div class="perfil">
-        <img src="{% static '../static/images/foto-perfil-joao.png' %}" alt="" width="90px" height="90px">
+        <img src="{% static 'images/foto-perfil-joao.png' %}" alt="" width="90px" height="90px">
 
         <div class="cabecalho">
             <h1>{{ request.user.nome }} {{ request.user.sobrenome }}</h1>
             <a href="{% url 'usuario:logout' %}">
-                <img src="{% static '../static/images/sair.png' %}" alt="" width="23px" height="23px">
+                <img src="{% static 'images/sair.png' %}" alt="" width="23px" height="23px">
             </a>
         </div> 
         <div class="nomedaativ">
@@ -53,7 +53,7 @@
                 <div>
                     <div class="arroz">
                         <div class="mauts">
-                            <a href=""><img src="{% static '../static/images/editar.png' %}" alt="" width="19px" height="19px"></a>
+                            <a href=""><img src="{% static 'images/editar.png' %}" alt="" width="19px" height="19px"></a>
                             <h4><span id="checkedCount">0</span>/7</h4>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
             <button onclick="calcularIMC()">Calcular</button>
         </div>
         {% include 'saude_em_acao/footer.html' %}
-        <script src="{% static '../static/js/scripts/imc.js' %}"></script>
-        <script src="{% static '../static/js/scripts/contagem.js' %}"></script>
-        <script src="{% static '../static/js/scripts/data.js' %}"></script>
+        <script src="{% static 'js/scripts/imc.js' %}"></script>
+        <script src="{% static 'js/scripts/contagem.js' %}"></script>
+        <script src="{% static 'js/scripts/data.js' %}"></script>
 </body>
 </html>

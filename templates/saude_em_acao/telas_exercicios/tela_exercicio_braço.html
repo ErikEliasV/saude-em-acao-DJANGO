@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '../static/css/styles/style-exercicio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles/style-exercicio.css' %}">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
         </h1>
         <div class="exercicios">
             <h1>Flexão de Braço</h1>
-            <img width="300px" height="250px" src="{% static '../static/gifs/flexão de braço 1.gif' %}" alt="">
+            <img width="300px" height="250px" src="{% static 'gifs/flexão de braço 1.gif' %}" alt="">
             <p id="info" style="display: none;">
                 <strong>Repetições:</strong> <br> 3 séries de 10-15 repetições. <br> <br>
                     <strong>Execução:</strong> <br>
@@ -33,7 +33,7 @@
         </div>
         <div class="exercicios">
             <h1>Flexão Diamante</h1>
-            <img width="300px" height="250px" src="{% static '../static/gifs/flexão diamante 1.gif' %}" alt="">
+            <img width="300px" height="250px" src="{% static 'gifs/flexão diamante 1.gif' %}" alt="">
             <p id="info-2" style="display: none;"> 
                 <strong>Repetições: </strong>3 séries de 8-12 repetições. <br> <br>
                     <strong>Execução:</strong> <br>
@@ -47,7 +47,7 @@
 
     {% include 'saude_em_acao/footer.html' %}
 
-    <script src="{% static '../static/js/scripts/exercicio.js' %}"></script>
+    <script src="{% static 'js/scripts/exercicio.js' %}"></script>
     
 </body>
 </html>
