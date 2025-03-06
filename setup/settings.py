@@ -30,7 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['saude-em-acao.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['saude-em-acao.onrender.com', 'localhost','127.0.0.1']
 
 
 # Application definition
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'saude_em_acao',
+        'USER': 'erik',
+        'PASSWORD': 'e1e2e3e4',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
